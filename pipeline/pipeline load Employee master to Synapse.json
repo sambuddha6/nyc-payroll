@@ -1,0 +1,41 @@
+{
+	"name": "pipeline load Employee master to Synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow load Employee",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow load EmpMaster",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_datalake",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-sambuddha-d/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-09-08T18:12:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

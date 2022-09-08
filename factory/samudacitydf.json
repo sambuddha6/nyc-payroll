@@ -1,0 +1,17 @@
+{
+	"name": "samudacitydf",
+	"properties": {
+		"globalParameters": {
+			"para_FiscalYear": {
+				"type": "int",
+				"value": 2020
+			}
+		}
+	},
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f81b5cfb-cc79-40d8-9335-89464a7440f8",
+		"tenantId": "9b7cbd77-6d6b-4879-8aba-63d7dfb18472"
+	}
+}
